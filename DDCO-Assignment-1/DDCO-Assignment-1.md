@@ -107,7 +107,7 @@ The F column matches A + B in all four rows.
 5. The truth table lists the output for every input combination. For n inputs, it has 2^n rows.
 
 ### 1. AND gate
-Output is 1 only when **all** inputs are 1. Expression: Z = X . Y
+Output is 1 only when **all** inputs are 1. Expression: Z = X . Y. It has two or more inputs but only one output. It is also called the **all or nothing gate**.
 
 | X | Y | Z = X.Y |
 |---|---|---|
@@ -117,7 +117,7 @@ Output is 1 only when **all** inputs are 1. Expression: Z = X . Y
 | 1 | 1 | 1 |
 
 ### 2. OR gate
-Output is 1 when **at least one** input is 1. Expression: Z = X + Y
+Output is 1 when **at least one** input is 1. Expression: Z = X + Y. It is also called the **any or all gate**, and the **inclusive OR gate**, because it includes the case where both inputs are present.
 
 | X | Y | Z = X+Y |
 |---|---|---|
@@ -127,7 +127,7 @@ Output is 1 when **at least one** input is 1. Expression: Z = X + Y
 | 1 | 1 | 1 |
 
 ### 3. NOT gate (inverter)
-One input. Output is the **complement** of the input. Expression: Z = X'
+One input and one output. Output is the **complement** of the input. Expression: Z = X'. It is also called an **inverter**.
 
 | X | Z = X' |
 |---|---|
@@ -289,6 +289,10 @@ Another way to write it: F = B(A + C + D).
 - NAND with inputs tied: (X.X)' = X'
 - NOR with inputs tied: (X + X)' = X'
 
+**Formulas used in the college notes:**
+- Using NAND: NOT: Q = NOT(A AND A). AND: Q = NOT[NOT(A.B) AND NOT(A.B)]. OR: Q = NOT[NOT(A.A) AND NOT(B.B)].
+- Using NOR: NOT: Q = NOT(A + A). OR: Q = NOT[NOT(A + B) + NOT(A + B)]. AND: invert both inputs and give them to a NOR.
+
 ### A. Using NAND gates only
 
 | Gate | Implementation | Working |
@@ -296,7 +300,7 @@ Another way to write it: F = B(A + C + D).
 | NOT | one NAND, both inputs tied to X | (X.X)' = X' |
 | AND | NAND followed by a NAND used as NOT | ((X.Y)')' = XY |
 | OR | NOT on each input, then one NAND | (X'.Y')' = X + Y (De Morgan) |
-| NOR | OR (as above) followed by a NAND-NOT | ((X + Y))' |
+| NOR | OR (3 NAND gates) followed by a NAND used as NOT | total 4 NAND gates, ((X')(Y'))'  inverted gives (X + Y)' |
 | XOR | four NAND gates | see below |
 
 **NOT:**
@@ -332,8 +336,8 @@ Check: Z = [(X.M)' . (Y.M)']' = X.M + Y.M = X(XY)' + Y(XY)' = X(X' + Y') + Y(X' 
 | NOT | one NOR, both inputs tied to X | (X + X)' = X' |
 | OR | NOR followed by a NOR used as NOT | ((X + Y)')' = X + Y |
 | AND | NOT on each input, then one NOR | (X' + Y')' = XY (De Morgan) |
-| NAND | AND (as above) followed by a NOR-NOT | (XY)' |
-| XNOR | four NOR gates | similar to XOR with NAND |
+| NAND | AND (3 NOR gates) followed by a NOR used as NOT | total 4 NOR gates, gives (XY)' |
+| XNOR | four NOR gates | M = (X + Y)', then Z = [(X + M)' + (Y + M)']' = XY + X'Y' |
 
 **NOT:**
 ```

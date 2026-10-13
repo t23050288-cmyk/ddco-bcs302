@@ -2,7 +2,7 @@
 
 Exam-ready notes for VTU 3rd semester "Digital Design and Computer Organization" (BCS302), written in easy student language.
 
-Sources: the college Module 1 and Module 2 notes PDFs + the Assignment 1 sheet (Sept/Oct 2026). Answers are written in simple words, enough for full marks at 3rd sem level, and not copied word-for-word from any source.
+Sources: the college Module 1 notes PDF, the handwritten Module 1 and Module 2 note PDFs, and the Assignment 1 sheet (Oct 2026). Answers are written in simple words, enough for full marks at 3rd sem level, and not copied word-for-word from any source.
 
 ## Contents
 
@@ -18,6 +18,7 @@ Every numeric answer was machine-verified before writing (see below).
 
 | File | Covers |
 |---|---|
+| [College-Notes-Module1-Checked.md](College-Notes-Module1-Checked.md) | **Start here for the college notes.** Follows the college Module 1 PDF section by section (laws, gates, canonical forms, K-map, NAND/NOR). Every worked answer was checked, and the mistakes found in the PDF are marked and corrected |
 | [Module1-Notes.md](Module1-Notes.md) | Binary logic, theorems and postulates, De Morgan, Boolean functions, all gates, NAND/NOR implementation, SOP/POS, minterms and maxterms, canonical forms, K-map rules, don't cares, worked examples |
 | [Module2-Notes.md](Module2-Notes.md) | Half and full adder, ripple carry adder, CLA, decoder, encoder, MUX, DEMUX, latches and flip-flops, master-slave, edge triggering, excitation tables |
 
